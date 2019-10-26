@@ -1,12 +1,22 @@
 import React from 'react';
-import latestImage from "./Components/homepage"
+import { Latest, Search, LatestImage } from './Components/homepage';
+
 
 function App() {
-  return (
-    <div>
-      <p>Hello World</p>
-      <latestImage />
-    </div>
+    return ( <
+        div >
+        <
+        header >
+        <
+        Latest / >
+
+        <
+        /header>   
+
+        <
+        LatestImage / >
+        <
+        /div>
     );
 }
 

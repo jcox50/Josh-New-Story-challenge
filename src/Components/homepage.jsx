@@ -1,32 +1,61 @@
 import React from "react";
 
+class Latest extends React.Component{
+    render(){
+        return(
+        <div className="latest">
+            <button>Latest!</button>
+
+        </div>
+        )
+    }
+}
+
+class Search extends React.Component{
+    render() {
+        return (
+            <div className="latest">
+                <button>Search</button>
+
+            </div>
+        )
+    }
+}
 
 
-
-class latestImage extends React.Component{
-    constructor() {
-        super();
+class LatestImage extends React.Component{
+    constructor(props) {
+        super(props);
         this.state = { 
-            img: [],
-            title: [],
-            alt: [] 
+           xkcdInfo: [],
         };
     }
 
     componentDidMount(){
         fetch('https://xkcd.now.sh/?comic=latest')
         .then(response => response.json())
-        .then(data => this.setState({ img: data.img }));
+        .then(data => this.setState({ xkcdInfo: data })
+        )
+        
+        
     }
 
     render(){
         return(
         <div className="image">
-            <img src={this.img.img}  />
+            <body>
+            <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
+            <img src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
+            </body>
+            <footer>
+                <p><b>{this.state.xkcdInfo.alt}</b></p>
+                <p>Comic Number: {this.state.xkcdInfo.num}</p>
+                <p>Year: {this.state.xkcdInfo.year}</p>
+            </footer>
         </div>
         )};
 
 
 }
 
-export default latestImage;
+export {Latest , Search, LatestImage};
