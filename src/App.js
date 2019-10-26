@@ -1,17 +1,13 @@
 import React from 'react';
-import LatestImage from './Components/latest-image';
-import Latest from './Components/latest';
-import Search from './Components/search-bar'
+import Homepage from './Components/homepage';
+import './App.css'
 
 function App() {
     return ( 
     <div>
-      <header className="App-header-container">
-        <Latest />
-        <Search />
-      </header>   
+      <Homepage />
 
-        <LatestImage />
+        
     </div>
     );
 }
