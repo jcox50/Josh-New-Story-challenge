@@ -1,28 +1,5 @@
 import React from "react";
 
-class Latest extends React.Component{
-    render(){
-        return(
-        <div className="latest">
-            <button>Latest!</button>
-
-        </div>
-        )
-    }
-}
-
-class Search extends React.Component{
-    render() {
-        return (
-            <div className="latest">
-                <button>Search</button>
-
-            </div>
-        )
-    }
-}
-
-
 class LatestImage extends React.Component{
     constructor(props) {
         super(props);
@@ -58,4 +35,4 @@ class LatestImage extends React.Component{
 
 }
 
-export {Latest , Search, LatestImage};
+export default LatestImage;
