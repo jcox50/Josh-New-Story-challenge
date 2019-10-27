@@ -37,7 +37,7 @@ class Searchpage extends React.Component {
 
                 </div>
                 <div>
-                    <button className="search"><Link to = '/search'>Search</Link></button>
+                    <button className="search"><Link to = '/search'>View Older Comics</Link></button>
 
                 </div>
             </header>

@@ -27,7 +27,7 @@ class Homepage extends React.Component {
 
                 </div>
                 <div>
-                    <button className="search"><Link to = '/search'>Search</Link></button>
+                    <button className="search"><Link to='/search'>View Older Comics</Link></button>
 
                 </div>
             </header>
@@ -37,8 +37,7 @@ class Homepage extends React.Component {
                     <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
                     <img className="latestImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
                     <p><b>{this.state.xkcdInfo.alt}</b></p>
-                    <p>Comic Number: {this.state.xkcdInfo.num}</p>
-                    <p>Year: {this.state.xkcdInfo.year}</p>
+                    <p>{this.state.xkcdInfo.num}</p><p>{this.state.xkcdInfo.year}</p>
                 </div>
             </body>   
         </div>
