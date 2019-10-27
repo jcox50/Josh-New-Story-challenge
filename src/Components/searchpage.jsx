@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Searchpage extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
            xkcdInfo: [],
-           search: ''
+           search: '',
+           submitted: ''
         };
     }
 
@@ -21,22 +23,21 @@ class Searchpage extends React.Component {
             .then(response => response.json())
             .then(data => this.setState({ xkcdInfo: data })
             )
+
+            event.preventDefault()
     };
 
-   
-   
-    
-   
+
     render() {
         return (
         <div>
             <header className="header-container">
-                <div className="latest">
-                    <button>Latest!</button>
+                <div>
+                    <button className="latest"><Link to = '/'>Latest!</Link></button>
 
                 </div>
-                <div className="search">
-                    <button>Search</button>
+                <div>
+                    <button className="search"><Link to = '/search'>Search</Link></button>
 
                 </div>
             </header>
@@ -44,17 +45,18 @@ class Searchpage extends React.Component {
             <body>
                 <div id="wrap">
                     <form onSubmit={this.xkcdSearch} autocomplete="on">
-                        <input id="search" name="search" type="text" placeholder="Search for a comic by number..." onChange={this.searchInput}></input><input id="search_submit" value="Search" type="submit"></input>
+                        <input className="searchInput" id="search" name="search" type="text" placeholder="Search for a comic by number..." onChange={this.searchInput}></input><input className="searchSubmit" id="search_submit" value="Search" type="submit"></input>
                     </form>
                 </div>
-                <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
-                <img className="latestImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
+                <div className="main-image-wrapper">
+                    <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
+                    <img className="searchImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
+                    <p><b>{this.state.xkcdInfo.alt}</b></p>
+                    <p>{this.state.xkcdInfo.num}</p>
+                    <p>{this.state.xkcdInfo.year}</p>
+                </div>
+              
             </body>
-            <footer>
-                <p><b>{this.state.xkcdInfo.alt}</b></p>
-                <p>Comic Number: {this.state.xkcdInfo.num}</p>
-                <p>Year: {this.state.xkcdInfo.year}</p>
-            </footer>
         </div>
         )
     }

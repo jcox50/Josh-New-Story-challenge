@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -21,26 +22,25 @@ class Homepage extends React.Component {
         return (
         <div>
             <header className="header-container">
-            <div className="latest">
-                <button>Latest!</button>
+                <div>
+                    <button className="latest"><Link to = '/'>Latest!</Link></button>
 
-            </div>
-            <div className="search">
-             <button>Search</button>
+                </div>
+                <div>
+                    <button className="search"><Link to = '/search'>Search</Link></button>
 
-            </div>
+                </div>
             </header>
-            <div className="image">
+            
             <body>
-            <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
-            <img className="latestImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
-            </body>
-            <footer>
-                <p><b>{this.state.xkcdInfo.alt}</b></p>
-                <p>Comic Number: {this.state.xkcdInfo.num}</p>
-                <p>Year: {this.state.xkcdInfo.year}</p>
-            </footer>
-        </div>
+                <div className="main-image-wrapper">
+                    <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
+                    <img className="latestImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
+                    <p><b>{this.state.xkcdInfo.alt}</b></p>
+                    <p>Comic Number: {this.state.xkcdInfo.num}</p>
+                    <p>Year: {this.state.xkcdInfo.year}</p>
+                </div>
+            </body>   
         </div>
         )
     }
