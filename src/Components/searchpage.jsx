@@ -5,17 +5,27 @@ class Searchpage extends React.Component {
         super(props);
         this.state = { 
            xkcdInfo: [],
+           search: ''
         };
     }
-   
-    componentDidMount(){
-        fetch('https://xkcd.now.sh/?comic=latest')
-        .then(response => response.json())
-        .then(data => this.setState({ xkcdInfo: data })
-        )
-        
-        
+
+    searchInput = (event) => {
+        this.setState({
+            search: event.target.value
+        })
     }
+
+    xkcdSearch = (event) => {
+        let url = `https://xkcd.now.sh/?comic=${this.state.search}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => this.setState({ xkcdInfo: data })
+            )
+    };
+
+   
+   
+    
    
     render() {
         return (
@@ -33,8 +43,8 @@ class Searchpage extends React.Component {
             
             <body>
                 <div id="wrap">
-                    <form action="" autocomplete="on">
-                        <input id="search" name="search" type="text" placeholder="Search for a comic by number..."></input><input id="search_submit" value="Search" type="submit"></input>
+                    <form onSubmit={this.xkcdSearch} autocomplete="on">
+                        <input id="search" name="search" type="text" placeholder="Search for a comic by number..." onChange={this.searchInput}></input><input id="search_submit" value="Search" type="submit"></input>
                     </form>
                 </div>
                 <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
