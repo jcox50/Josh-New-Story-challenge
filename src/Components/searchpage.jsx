@@ -52,8 +52,7 @@ class Searchpage extends React.Component {
                     <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
                     <img className="searchImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
                     <p><b>{this.state.xkcdInfo.alt}</b></p>
-                    <p>{this.state.xkcdInfo.num}</p>
-                    <p>{this.state.xkcdInfo.year}</p>
+                    
                 </div>
               
             </body>

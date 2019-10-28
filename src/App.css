@@ -4,6 +4,7 @@
 .header-container{
     display: flex;
     flex-direction: row;
+    padding: 2.5em;
 }
 
 .main-image-wrapper{
@@ -13,8 +14,30 @@
   align-items: center;
 }
 
+.infoWrapper{
+  display: block;
+  flex-direction: row;
+  flex-flow: row;
+}
+
+.latest{
+  border-radius: 12px;
+  background-color: white;
+  width: 15em;
+  height: 5em;
+  font-size: 12px;
+}
+
+.search{
+  border-radius: 12px;
+  background-color: white;
+  width: 15em;
+  height: 5em;
+  font-size: 12px;
+}
+
 body {
-	background: #B7A9A1;
+  background: #c4c0c0;
   font-size: 15px;
   
 }
@@ -53,7 +76,7 @@ input[type="text"]:focus:hover {
   border-bottom: 1px solid #BBB;
 }
 
-input[type="text"]:focus {
+input[type="text"]{
   width: 700px;
   z-index: 1;
   border-bottom: 1px solid #BBB;
