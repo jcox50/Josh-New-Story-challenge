@@ -1,11 +1,14 @@
 import React from 'react';
-import latestImage from "./Components/homepage"
+
+import './App.css'
+
+
 
 function App() {
-  return (
+    return ( 
     <div>
-      <p>Hello World</p>
-      <latestImage />
+
+        
     </div>
     );
 }

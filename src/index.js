@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import Homepage from './Components/homepage';
+import Searchpage from './Components/searchpage';
+import './App.css'
+
+const router = (
+    <Router>
+        <div>
+
+            <Route path='/' exact component={Homepage} />
+            <Route path='/search' component={Searchpage} />
+
+        </div>
+    </Router>
 
 
-let request = new XMLHttpRequest()
+)
 
-request.open('GET', 'https://xkcd.now.sh/?comic=latest', true)
-request.onload = function(){
-    JSON.parse(this.response)
-};
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+ReactDOM.render(router, document.getElementById('root'));
