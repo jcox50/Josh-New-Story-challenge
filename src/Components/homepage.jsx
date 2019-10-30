@@ -32,16 +32,16 @@ class Homepage extends React.Component {
                 </div>
             </header>
             
-            <body>
+            <div>
                 <div className="main-image-wrapper">
                     <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
-                    <img className="latestImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
+                    <img className="latestImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title} title={this.state.xkcdInfo.alt}/>
                     <div className="infoWrapper">
                         <p><b>{this.state.xkcdInfo.alt}</b></p>
                         <p>Comic number: {this.state.xkcdInfo.num}</p><p>Year: {this.state.xkcdInfo.year}</p>
                     </div>
                 </div>
-            </body>   
+            </div>   
         </div>
         )
     }

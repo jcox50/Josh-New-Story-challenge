@@ -42,7 +42,7 @@ class Searchpage extends React.Component {
                 </div>
             </header>
             
-            <body>
+            <div>
                 <div id="wrap">
                     <form onSubmit={this.xkcdSearch} autocomplete="on">
                         <input className="searchInput" id="search" name="search" type="text" placeholder="Search for a comic by number..." onChange={this.searchInput}></input><input className="searchSubmit" id="search_submit" value="Search" type="submit"></input>
@@ -50,12 +50,12 @@ class Searchpage extends React.Component {
                 </div>
                 <div className="main-image-wrapper">
                     <h2 className="comicTitle">{this.state.xkcdInfo.title}</h2>
-                    <img className="searchImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title}/>
+                    <img className="searchImage" src={ this.state.xkcdInfo.img } alt={this.state.xkcdInfo.title} title={this.state.xkcdInfo.alt}/>
                     <p><b>{this.state.xkcdInfo.alt}</b></p>
                     
                 </div>
               
-            </body>
+            </div>
         </div>
         )
     }
